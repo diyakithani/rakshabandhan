@@ -63,7 +63,7 @@ body {
 @keyframes blink { 0%,100%{ opacity:.3; transform: scale(.9);} 50%{ opacity:1; transform: scale(1.25);} }
 
 /* Rakhi */
-.rakhi-wrap { display: grid; place-items: center; padding: 20px; }
+.rakhi-wrap { display: grid; place-items: center; padding: 5px; }
 .rakhi { width: clamp(220px, 50vw, 360px); height: auto; }
 .spin { transform-origin: 150px 150px; animation: spin 8s linear infinite; }
 .pulse { animation: pulse 2.4s ease-in-out infinite; }
@@ -111,11 +111,11 @@ body {
 
 /* Pretty note and reasons */
 .love-note {
-  margin-top: 18px;
+  margin-top: 10px;
   text-align: center;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
-  padding: 16px 20px;
+  padding: 3px 10px;
   border-radius: 16px;
   max-width: 700px;
 }
@@ -138,6 +138,8 @@ body {
 /* Reasons list */
 .reasons {
   margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   padding: 16px 20px;
