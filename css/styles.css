@@ -1,0 +1,162 @@
+/* Global */
+:root {
+  --bg-start: #000000;
+  --bg-end: #ff73b3;
+  --text: #fff;
+  --muted: #ffd1e6;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  overflow-x: hidden;
+}
+
+.hidden { display: none; }
+.screen { min-height: 100dvh; padding: 24px; }
+.screen--center { display: grid; place-items: center; }
+
+/* Gift button */
+.gift-btn {
+  display: grid; place-items: center; gap: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 28px 36px; border-radius: 20px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.gift-btn:hover { transform: translateY(-2px); box-shadow: 0 20px 60px rgba(255, 120, 180, 0.35); }
+.gift { width: 180px; height: 180px; filter: drop-shadow(0 10px 30px rgba(255, 120, 180, .45)); }
+.cta { font-weight: 700; letter-spacing: .3px; }
+
+/* Main */
+.hero { text-align: center; padding: 40px 16px 10px; }
+.hero h1 { font-size: clamp(28px, 4vw, 48px); margin: 0 0 10px; }
+.sub { opacity: .9; margin: 0; }
+
+/* Fairy lights around edges */
+.fairy-lights { position: fixed; inset: 0; pointer-events: none; }
+.fairy-lights ul { list-style: none; margin: 0; padding: 0; }
+.fairy-lights li {
+  position: absolute; width: 10px; height: 10px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 12px 4px rgba(255,255,255,.7);
+  animation: blink 2.4s infinite ease-in-out;
+}
+/* Place bulbs roughly around viewport */
+.fairy-lights li:nth-child(1) { top: 20px; left: 10vw; }
+.fairy-lights li:nth-child(2) { top: 18px; left: 35vw; animation-delay: .2s; }
+.fairy-lights li:nth-child(3) { top: 24px; right: 12vw; animation-delay: .4s; }
+.fairy-lights li:nth-child(4) { bottom: 26px; left: 16vw; animation-delay: .6s; }
+.fairy-lights li:nth-child(5) { bottom: 22px; left: 44vw; animation-delay: .8s; }
+.fairy-lights li:nth-child(6) { bottom: 20px; right: 14vw; animation-delay: 1s; }
+.fairy-lights li:nth-child(7) { left: 16px; top: 35vh; animation-delay: 1.2s; }
+.fairy-lights li:nth-child(8) { right: 16px; top: 45vh; animation-delay: 1.4s; }
+.fairy-lights li:nth-child(9) { left: 8vw; bottom: 40vh; animation-delay: 1.6s; }
+.fairy-lights li:nth-child(10) { right: 8vw; bottom: 46vh; animation-delay: 1.8s; }
+.fairy-lights li:nth-child(11) { left: 30vw; top: 50vh; animation-delay: 2s; }
+.fairy-lights li:nth-child(12) { right: 30vw; top: 30vh; animation-delay: 2.2s; }
+
+@keyframes blink { 0%,100%{ opacity:.3; transform: scale(.9);} 50%{ opacity:1; transform: scale(1.25);} }
+
+/* Rakhi */
+.rakhi-wrap { display: grid; place-items: center; padding: 20px; }
+.rakhi { width: clamp(220px, 50vw, 360px); height: auto; }
+.spin { transform-origin: 150px 150px; animation: spin 8s linear infinite; }
+.pulse { animation: pulse 2.4s ease-in-out infinite; }
+.twinkle circle { fill: #fff; animation: twinkle 1.8s ease-in-out infinite alternate; }
+.twinkle circle:nth-child(2) { animation-delay: .4s; }
+.twinkle circle:nth-child(3) { animation-delay: .8s; }
+.twinkle circle:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100%{ filter: drop-shadow(0 0 0 rgba(255,255,255,.0)); } 50%{ filter: drop-shadow(0 0 24px rgba(255,255,255,.7)); } }
+@keyframes twinkle { 0%{ opacity:.4; } 100%{ opacity:1; } }
+
+/* Photos */
+.photos { padding: 10px 20px 60px; max-width: 1100px; margin: 0 auto; }
+.photos h2 { text-align: center; margin: 10px 0 24px; font-size: clamp(20px, 3vw, 28px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.grid figure { margin: 0; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; overflow: hidden; }
+.grid img { width: 100%; height: 240px; object-fit: cover; display: block; }
+.grid figcaption { padding: 10px 12px; font-size: 14px; opacity: .9; }
+
+/* Footer */
+.foot { text-align: center; padding: 24px; opacity: .9; }
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .spin, .pulse, .twinkle circle, .fairy-lights li { animation: none !important; }
+}
+/* Hide utility */
+.hidden { display: none; }
+
+/* Gift overlay sits ON TOP so it won't push content down while fading */
+#gift {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+/* Make the ring rotate in place at the center of 500x500 */
+.spin {
+  transform-origin: 250px 250px;
+  transform-box: view-box;
+  animation: spin 8s linear infinite;
+}
+
+/* Pretty note and reasons */
+.love-note {
+  margin-top: 18px;
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 16px 20px;
+  border-radius: 16px;
+  max-width: 700px;
+}
+.love-note__title {
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 28px);
+  margin-bottom: 6px;
+}
+.love-note__line {
+  margin: 6px 0 2px;
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+.love-note__sig {
+  opacity: .9;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Reasons list */
+.reasons {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 16px 20px;
+  border-radius: 16px;
+  max-width: 700px;
+}
+.reasons h2 {
+  margin: 0 0 10px;
+  font-size: clamp(18px, 2.4vw, 22px);
+  text-align: center;
+}
+.reasons ol {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+.reasons li {
+  line-height: 1.45;
+}
+
+

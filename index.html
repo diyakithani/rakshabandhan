@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Raksha Bandhan, Papa :)</title>
+  <meta name="description" content="A small gift page for Papa — Happy Raksha Bandhan!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Gift Landing -->
+  <section id="gift" class="screen screen--center" aria-label="Gift screen">
+    <button id="openGift" class="gift-btn" aria-label="Open gift">
+      <svg class="gift" viewBox="0 0 200 200" role="img" aria-label="Gift box">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff99cc"/>
+            <stop offset="100%" stop-color="#ff66aa"/>
+          </linearGradient>
+        </defs>
+        <!-- Box -->
+        <rect x="30" y="80" width="140" height="90" rx="10" fill="url(#g1)"/>
+        <rect x="30" y="70" width="140" height="30" rx="8" fill="#111" opacity="0.25"/>
+        <!-- Ribbon -->
+        <rect x="95" y="70" width="10" height="100" fill="#fff"/>
+        <rect x="30" y="100" width="140" height="10" fill="#fff"/>
+        <!-- Bow -->
+        <circle cx="100" cy="70" r="10" fill="#fff"/>
+        <path d="M100 70 C70 40, 55 35, 40 55 C65 60, 80 65, 100 70" fill="#fff"/>
+        <path d="M100 70 C130 40, 145 35, 160 55 C135 60, 120 65, 100 70" fill="#fff"/>
+      </svg>
+      <span class="cta">Open your gift</span>
+    </button>
+  </section>
+
+  
+  <!-- Main Reveal, rakhi page starts here! -->
+  <main id="main" class="hidden" aria-live="polite" display="none">
+    <div class="fairy-lights" aria-hidden="true">
+      <ul>
+        <li></li><li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li>
+      </ul>
+    </div>
+
+    <header class="hero">
+      <h1>Happy Raksha Bandhan Papa :)</h1>
+      <p class="sub">With love — always your proud kid.</p>
+    </header>
+
+  <!-- Rakhi Animation + Message -->
+<section class="rakhi-wrap" aria-label="Animated rakhi">
+  <svg class="rakhi" viewBox="0 0 500 500" role="img" >
+    <defs>
+      <!-- Glow gradient -->
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffd1e6"/>
+        <stop offset="70%" stop-color="#ff79c6"/>
+        <stop offset="100%" stop-color="#111"/>
+      </radialGradient>
+
+      <!-- Clip path for photo (centered) -->
+      <clipPath id="rakhiPhotoClip" clipPathUnits="userSpaceOnUse">
+        <circle cx="250" cy="250" r="68" />
+      </clipPath>
+    </defs>
+
+    <!-- Threads (long, pass through center y=250) -->
+    <line x1="-800" y1="250" x2="210"  y2="250" stroke="#ffb3d9" stroke-width="6" stroke-linecap="round"/>
+    <line x1="290"  y1="250" x2="1000" y2="250" stroke="#ffb3d9" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Glow behind photo -->
+    <circle cx="250" cy="250" r="76" fill="url(#glow)" class="pulse"/>
+
+    <!-- Photo in center (update the href to your image path) -->
+    <image
+      href="assets/p2.jpg"
+      x="182" y="182" width="136" height="136"
+      preserveAspectRatio="xMidYMid slice"
+      clip-path="url(#rakhiPhotoClip)" />
+
+    <!-- Border ring around photo -->
+    <circle cx="250" cy="250" r="68" fill="none" stroke="#fff" stroke-width="3"/>
+
+    <!-- Spokes ring + beads (rotates in place) -->
+    <g class="spin">
+      <circle cx="250" cy="250" r="110" fill="none" stroke="#ffc2e6" stroke-width="3" stroke-dasharray="6 12"/>
+      <g id="beads">
+        <circle cx="250" cy="130" r="6" fill="#fff"/>
+        <circle cx="370" cy="250" r="6" fill="#fff"/>
+        <circle cx="250" cy="370" r="6" fill="#fff"/>
+        <circle cx="130" cy="250" r="6" fill="#fff"/>
+        <circle cx="327" cy="173" r="6" fill="#fff"/>
+        <circle cx="173" cy="173" r="6" fill="#fff"/>
+        <circle cx="327" cy="327" r="6" fill="#fff"/>
+        <circle cx="173" cy="327" r="6" fill="#fff"/>
+      </g>
+    </g>
+
+    <!-- Tiny star sparks -->
+    <g class="twinkle">
+      <circle cx="215" cy="215" r="2"/>
+      <circle cx="295" cy="235" r="2"/>
+      <circle cx="270" cy="295" r="2"/>
+      <circle cx="210" cy="305" r="2"/>
+    </g>
+  </svg>
+
+  <!-- Cute daughter → Papa note -->
+  <div class="love-note">
+    <div class="love-note__title">Happy Raksha Bandhan Papa :)</div>
+    <p class="love-note__line">
+      “From your not-so-little girl: every brave thing I do is borrowed from your courage.”
+    </p>
+    <p class="love-note__sig">— With all my love</p>
+  </div>
+
+  <!-- Reasons: coolest brother (for the bhai in your life) -->
+  <div class="reasons">
+    <h2>5 reasons you’re the coolest brother</h2>
+    <ol>
+      <li>You are funny. 10/10 jokes.</li>
+      <li>You look exactly like me.</li>
+      <li>We go on the best rain rides</li>
+      <li>We both have an unhealthy obsession with Baskin Robbins</li>
+       <li>We share the same last name — instant cool factor</li>
+    </ol>
+  </div>
+</section>
+
+    
+
+    <!-- Photos area -->
+    <section class="photos" aria-label="Photo gallery">
+      <h2>Memories</h2>
+      <div class="grid">
+        <!-- Replace src with your own images inside assets/photos/ -->
+        <figure><img src="assets/p1.jpg" alt=""/><figcaption></figcaption></figure>
+        <figure><img src="assets/p2.jpg" alt=""/><figcaption></figcaption></figure>
+        <figure><img src="assets/p3.jpg" alt=""/><figcaption></figcaption></figure>
+        <figure><img src="assets/p4.jpg" alt=""/><figcaption></figcaption></figure>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>Made with ❤️ for Papa.</p>
+    </footer>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
